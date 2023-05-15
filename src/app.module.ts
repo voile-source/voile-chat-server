@@ -3,11 +3,11 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import DatabaseConfig from './config/database';
 import { UserModule } from './modules/user/user.module';
-import { WebSocketModule } from './modules/websocket/websocket.module';
+import { EventsGateway } from './modules/event/websocket.gatway';
 
 @Module({
-  imports: [...DatabaseConfig, UserModule, WebSocketModule],
+  imports: [...DatabaseConfig, UserModule],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, EventsGateway],
 })
 export class AppModule {}

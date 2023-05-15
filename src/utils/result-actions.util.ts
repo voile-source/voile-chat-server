@@ -8,7 +8,7 @@ export const success = (data = null, msg = '请求成功') => {
   };
 };
 
-export const error = (data = null, msg = '服务器异常') => {
+export const error = (msg = '服务器异常', data = null) => {
   return {
     code: ResultState.ERROR,
     msg,
